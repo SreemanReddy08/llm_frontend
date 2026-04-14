@@ -55,6 +55,7 @@ function App() {
       const uploadRes = await fetch("http://13.51.177.137:8000/upload/", {
         method: "POST",
         body: formData,
+        mode:"no-cors"
       });
 
       if (!uploadRes.ok) throw new Error("Upload failed");
@@ -71,6 +72,7 @@ function App() {
         `http://13.51.177.137:8000/process/?filename=${uploadedFilename}`,
         {
           method: "POST",
+          mode:"no-cors"
         }
       );
 
